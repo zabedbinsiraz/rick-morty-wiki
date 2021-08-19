@@ -5,29 +5,6 @@ import { Card } from '../Card/Card';
 import { Loader } from '../Loader/Loader';
 
 
-// const GET_CHARACTERS = gql`
-// query ($page: Int, $query: String) {
-//   characters (page: $page, filter: { name: $query }) {
-//     info {
-//       count
-//       prev
-//       next
-//     }
-//     results {
-//       id
-//       name
-//       gender
-//       status
-//       image
-//       species
-//       episode {
-//         id
-//       }
-//     }
-//   }
-// }
-// `;
-
 const GET_CHARACTERS =  gql`
   query characters($page: Int, $query: String) {
     characters (page: $page, filter: { name: $query }) {
@@ -87,8 +64,6 @@ export const Home = () => {
     <>
       <header>
 
-
-
         <div style={{textAlign:"center"}} className='container'>
             <h1 style={{marginBottom:"8px", color:"#282c34"}}> Rick and Morty Wiki</h1>
           <form  onSubmit={(e) => (setSearchQuery(query), e.preventDefault())}>
@@ -126,6 +101,7 @@ export const Home = () => {
           }
         </section>
       </main>
+      
       <footer style = {{padding:"10px", margin:"10px",textAlign:"center"}}>
       <div textAlign="center" fontSize="13px" p="10px" shadow="sm">
     {`© ${new Date().getFullYear()}, developed by `}
